@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057f77af4aca66545909d2639a636666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posX: 1
-  negX: 1
-  posZ: 0
-  negZ: 0
+  posX: 0
+  negX: 0
+  posZ: 1
+  negZ: 1
   placeableStructures:
   - {fileID: 8639666480936567173, guid: a3ed0162eafe8774f9c96ad4baf7f4c6, type: 3}
   - {fileID: 8639666480936567173, guid: 8222a572776555a4e901521d9d6741cb, type: 3}

@@ -8,9 +8,11 @@ public class MainManager : MonoBehaviour
 
     public static MainManager instance;
 
+    public int Money;
     public GameObject GarbageTruckPrefab;
     public float TrucksSpawnRate=5;
-    
+    public int Capacity=200;
+    public int OccupiedCapacity;
     void Start()
     {
         instance = GetComponent<MainManager>();
@@ -18,17 +20,16 @@ public class MainManager : MonoBehaviour
         StartCoroutine(SpawnCar());
     }
 
-    void Update()
-    {
-        
-    }
-
     IEnumerator SpawnCar()
     {
         GameObject g=Instantiate(GarbageTruckPrefab);
-        g.GetComponent<SplineAnimate>().MaxSpeed = 1;
         yield return new WaitForSeconds(TrucksSpawnRate);
         StartCoroutine(SpawnCar());
+    }
+
+    public void UpgradeTrucks()
+    {
+        TrucksSpawnRate -= 1;
     }
     
 }

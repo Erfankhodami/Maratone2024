@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6628832640283503615}
   - component: {fileID: 5564362782499977574}
   - component: {fileID: -932775131762074310}
+  - component: {fileID: 798794010854908688}
   m_Layer: 0
   m_Name: GarbageTruck
   m_TagString: Untagged
@@ -102,9 +103,27 @@ MonoBehaviour:
   m_LoopMode: 1
   m_Method: 0
   m_Duration: 1
-  m_MaxSpeed: 10
+  m_MaxSpeed: 44.73367
   m_EasingMode: 0
   m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
+  m_ObjectForwardAxis: 1
+  m_ObjectUpAxis: 2
   m_StartOffset: 0
+--- !u!114 &798794010854908688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140303453978992534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99928691ac1980a45a2a8c86d8ad300c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Capacity: 0
+  SplineContainers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
