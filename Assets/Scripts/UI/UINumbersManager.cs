@@ -15,7 +15,7 @@ public class UINumbersManager : MonoBehaviour
 
     void Update()
     {
-        garbageText.text = currentGarbages.ToString() + " / " + maximumGarbages.ToString();
+        garbageText.text = "Recycle " + currentGarbages.ToString() + " / " + maximumGarbages.ToString();
         peopleText.text = peopleAmount.ToString();
         moneyText.text = money.ToString() + "$";
     }
