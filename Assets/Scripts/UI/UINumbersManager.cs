@@ -18,5 +18,6 @@ public class UINumbersManager : MonoBehaviour
         garbageText.text = "Recycle " + currentGarbages.ToString() + " / " + maximumGarbages.ToString();
         peopleText.text = peopleAmount.ToString();
         moneyText.text = money.ToString() + "$";
+        //MainManager.instance.TrucksSpawnRate = 5;
     }
 }
