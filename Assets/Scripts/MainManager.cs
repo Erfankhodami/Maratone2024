@@ -10,6 +10,7 @@ public class MainManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        //hello
 
     }
 
