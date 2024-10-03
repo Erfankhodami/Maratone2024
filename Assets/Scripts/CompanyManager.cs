@@ -34,6 +34,7 @@ public class CompanyManager : MonoBehaviour
     void Start()
     {
         UINumbers = GetComponent<UINumbersManager>();
+        Application.targetFrameRate = 120;
     }
 
     public void StartCompany()
