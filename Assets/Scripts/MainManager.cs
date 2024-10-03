@@ -1,35 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Splines;
 
 public class MainManager : MonoBehaviour
 {
-
     public static MainManager instance;
 
-    public int Money;
     public GameObject GarbageTruckPrefab;
-    public float TrucksSpawnRate=5;
-    public int Capacity=200;
-    public int OccupiedCapacity;
+    
     void Start()
     {
+        Application.targetFrameRate = 144;
         instance = GetComponent<MainManager>();
-        //hello
-        StartCoroutine(SpawnCar());
+        StartCoroutine(SpawnCar(1, 1));
     }
 
-    IEnumerator SpawnCar()
+    public IEnumerator SpawnCar(float spawnTime, int amount)
     {
-        GameObject g=Instantiate(GarbageTruckPrefab);
-        yield return new WaitForSeconds(TrucksSpawnRate);
-        StartCoroutine(SpawnCar());
+        for (int i = 0; i < amount; i++)
+        {
+            Instantiate(GarbageTruckPrefab);
+            yield return new WaitForSeconds(spawnTime / amount);
+        }
     }
-
-    public void UpgradeTrucks()
-    {
-        TrucksSpawnRate -= 1;
-    }
-    
 }

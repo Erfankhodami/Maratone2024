@@ -1,31 +1,35 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UINumbersManager : MonoBehaviour
 {
-    public int currentGarbages;
-    public int maximumGarbages;
-    public Text garbageText;
+    public bool Active = false;
 
-    public int peopleAmount;
-    public Text peopleText;
+    [Space]
+    public float garbages;
 
-    public int money;
-    public Text moneyText;
+    public float peopleAmount = 2500f;
+    public TextMeshProUGUI peopleText;
 
-    void Start()
-    {
-        //money = MainManager.instance.Money;
-    }
+    public float money;
+    public TextMeshProUGUI moneyText;
+
+    public float peopleHappiness = 60f;
+    public Slider happinessSlider;
+
+    public float cityDirtiness = 5f;
+    public Slider dirtinessSlider;
 
     void Update()
     {
-        garbageText.text = "Recycle " + currentGarbages.ToString() + " / " + maximumGarbages.ToString();
-        peopleText.text = peopleAmount.ToString();
-        moneyText.text = money.ToString() + "$";
-        MainManager.instance.TrucksSpawnRate = 8;
+        if (Active)
+        {
+            peopleText.text = Mathf.Round(peopleAmount).ToString();
+            moneyText.text = Mathf.Round(money).ToString() + "$";
+
+            happinessSlider.value = Mathf.Round(peopleHappiness);
+            dirtinessSlider.value = Mathf.Round(cityDirtiness);
+        }
     }
-    
-    
 }

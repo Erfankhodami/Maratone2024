@@ -13,6 +13,7 @@ public class Tile : MonoBehaviour
 
     [Header("Information")]
     public GameObject currentStucture = null;
+    public GameObject trash = null;
 
     [HideInInspector] public Tile _X;
     [HideInInspector] public Tile _Y;
@@ -27,23 +28,15 @@ public class Tile : MonoBehaviour
             currentStucture = null;
         }
 
-        if (_Y != null)
+        Place();
+    }
+
+    public void RemoveStuctures()
+    {
+        if (currentStucture != null)
         {
-            if (!_Y.posX && !_Y.posZ && !_Y.negX && !_Y.negZ)
-            {
-                if (Random.Range(0, 2) == 0)
-                {
-                    Place();
-                }
-            }
-            else
-            {
-                Place();
-            }
-        }
-        else
-        {
-            Place();
+            DestroyImmediate(currentStucture);
+            currentStucture = null;
         }
     }
 
@@ -51,7 +44,7 @@ public class Tile : MonoBehaviour
     {
         if(placeableStructures.Count > 0)
         {
-            int number = Random.Range(-generator.structureEmptyTileRate, placeableStructures.Count);
+            int number = Random.Range(-generator.emptyTileRate, placeableStructures.Count);
 
             if(number >= 0)
             {
@@ -65,6 +58,34 @@ public class Tile : MonoBehaviour
 
                 currentStucture = structure;
             }
+        }
+    }
+
+    public void PlaceTrash()
+    {
+        if(trash == null)
+        {
+            int number = Random.Range(-3, placeableStructures.Count);
+
+            if (number >= 0)
+            {
+                GameObject trash = Instantiate(generator.trashes[number]);
+                trash.name = "Trash";
+                trash.transform.SetParent(transform);
+                trash.transform.localPosition = new Vector3(Random.Range(-1, 1), generator.is3D ? generator.structureYOffset : Random.Range(-1, 1), 0);
+                trash.transform.localRotation = Quaternion.identity;
+
+                this.trash = trash;
+            }
+        }
+    }
+
+    public void RemoveTrashes()
+    {
+        if (trash != null)
+        {
+            DestroyImmediate(trash);
+            trash = null;
         }
     }
 }

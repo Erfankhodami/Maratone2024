@@ -1,31 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class CarsController : MonoBehaviour
 {
-    [SerializeField] private GameObject CarPrefab;
+    [SerializeField] private SplineAnimate _splineAnimate;
+    [SerializeField] private List<SplineContainer> _splineContainers;
 
-    [SerializeField] private Transform CarSpawn;
-
-    
-    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Instansiatecars());
+        _splineAnimate = GetComponent<SplineAnimate>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    IEnumerator Instansiatecars()
-    {
-        yield return new WaitForSeconds(Random.Range(1, 3));
-        GameObject SpawnedCar=Instantiate(CarPrefab, CarSpawn);
-        SpawnedCar.GetComponent<Rigidbody2D>().velocity = (Vector2.up*10);
-        StartCoroutine(Instansiatecars());
+        _splineAnimate.ElapsedTime += .0003f;
+        if (_splineAnimate.ElapsedTime > 1)
+        {
+            Destroy(gameObject);
+        }
     }
 }

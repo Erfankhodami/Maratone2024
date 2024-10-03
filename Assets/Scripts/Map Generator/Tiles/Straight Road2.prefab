@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4833139095723219300
+--- !u!1 &2071162241137255443
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8482006887010217653}
-  - component: {fileID: 3422105098523121478}
+  - component: {fileID: 6367995285843771454}
+  - component: {fileID: 6755214443587166374}
   m_Layer: 0
   m_Name: Straight Road2
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8482006887010217653
+--- !u!4 &6367995285843771454
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833139095723219300}
+  m_GameObject: {fileID: 2071162241137255443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 798931917237353051}
+  - {fileID: 9009555002857889117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3422105098523121478
+--- !u!114 &6755214443587166374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833139095723219300}
+  m_GameObject: {fileID: 2071162241137255443}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057f77af4aca66545909d2639a636666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posX: 0
-  negX: 0
-  posZ: 1
-  negZ: 1
+  posX: 1
+  negX: 1
+  posZ: 0
+  negZ: 0
   placeableStructures:
   - {fileID: 8639666480936567173, guid: a3ed0162eafe8774f9c96ad4baf7f4c6, type: 3}
   - {fileID: 8639666480936567173, guid: 8222a572776555a4e901521d9d6741cb, type: 3}
@@ -56,7 +56,7 @@ MonoBehaviour:
   _X: {fileID: 0}
   _Y: {fileID: 0}
   generator: {fileID: 0}
---- !u!1 &8779239780098077977
+--- !u!1 &5669060294805942486
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,8 +64,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 798931917237353051}
-  - component: {fileID: 5672596263894890828}
+  - component: {fileID: 9009555002857889117}
+  - component: {fileID: 8346362816672483630}
   m_Layer: 0
   m_Name: Straight Road
   m_TagString: Untagged
@@ -73,28 +73,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &798931917237353051
+--- !u!4 &9009555002857889117
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8779239780098077977}
+  m_GameObject: {fileID: 5669060294805942486}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8482006887010217653}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5672596263894890828
+  m_Father: {fileID: 6367995285843771454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!212 &8346362816672483630
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8779239780098077977}
+  m_GameObject: {fileID: 5669060294805942486}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

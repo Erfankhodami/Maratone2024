@@ -21,6 +21,11 @@ public class GeneratorEditor : Editor
             generator.CreateStructures();
         }
 
+        if (GUILayout.Button("Delete Structures"))
+        {
+            generator.DeleteStructures();
+        }
+
         if (GUILayout.Button("Delete"))
         {
             generator.Delete();
@@ -32,6 +37,7 @@ public class Generator : MonoBehaviour
 {
     [Header("Tiles Setup")]
     public List<Tile> allKindsOfTiles = new List<Tile>();
+    public List<GameObject> trashes = new List<GameObject>();
 
     public int x;
     public int y;
@@ -43,7 +49,7 @@ public class Generator : MonoBehaviour
 
     [Header("Structure Setup")]
     public float structureYOffset;
-    public int structureEmptyTileRate;
+    public int emptyTileRate;
 
     private List<GameObject> rows = new List<GameObject>();
 
@@ -153,7 +159,24 @@ public class Generator : MonoBehaviour
         {
             for (int x = 0; x < this.x; x++)
             {
-                GetTileFromAddress(x, y).AddStructures();
+                if (GetTileFromAddress(x, y).tag != "Grass")
+                {
+                    GetTileFromAddress(x, y).AddStructures();
+                }
+            }
+        }
+    }
+
+    public void DeleteStructures()
+    {
+        for (int y = 0; y < this.y; y++)
+        {
+            for (int x = 0; x < this.x; x++)
+            {
+                if (GetTileFromAddress(x, y).tag != "Grass")
+                {
+                    GetTileFromAddress(x, y).RemoveStuctures();
+                }
             }
         }
     }
