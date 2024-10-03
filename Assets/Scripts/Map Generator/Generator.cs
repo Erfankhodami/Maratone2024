@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(Generator))]
@@ -32,7 +33,7 @@ public class GeneratorEditor : Editor
         }
     }
 }
-
+#endif
 public class Generator : MonoBehaviour
 {
     [Header("Tiles Setup")]
